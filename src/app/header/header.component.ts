@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgControl } from '@angular/forms';
 import { UserAuthService } from '../_services/user-auth.service';
 import { Router } from '@angular/router';
+import { UserService } from '../_services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,8 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent  implements OnInit{
   constructor(private userAuthService:UserAuthService,
-    private router:Router) {}
+    private router:Router,
+    public userService:UserService) {}
   ngOnInit(): void {}
     
     public isLoggedIn(){
